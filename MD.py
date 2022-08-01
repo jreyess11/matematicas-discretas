@@ -6,20 +6,24 @@
 import msvcrt
 from prettytable import PrettyTable
 
-tabla=PrettyTable()
-tauto=[]
-tauto2=[]
+tabla = PrettyTable()
+tauto = []
+tauto2 = []
+tautover=True
+
 
 def P():
-    Eq=(not s or (p and not r)) and ((not p or (r or q)) and s)
+    Eq = (not s or (p and not r)) and ((not p or (r or q)) and s)
     return Eq
 
+
 def Q():
-    Eq2=p or t
+    Eq2 = p or t
     return Eq2
 
+
 def hacer_tablalinda(arr):
-    tabla.field_names=["p","q","r","s","t","Equivalencia"]
+    tabla.field_names = ["p", "q", "r", "s", "t", "Equivalencia"]
     for i in arr:
         tabla.add_row(i)
     return tabla
@@ -27,14 +31,16 @@ def hacer_tablalinda(arr):
 
 print("===EJERCICIO 51===")
 
-valores=[True, False]
+valores = [True, False]
 
 for p in valores:
     for q in valores:
         for r in valores:
             for s in valores:
                 for t in valores:
-                    R=(not P() or Q()) and (not Q() or P())
+                    R = (not P() or Q()) and (not Q() or P())
+                    if R is False:
+                        tautover = False
                     tauto.append(str(p))
                     tauto.append(str(q))
                     tauto.append(str(r))
@@ -42,11 +48,13 @@ for p in valores:
                     tauto.append(str(t))
                     tauto.append(str(R))
                     tauto2.append(tauto)
-                    tauto=[]
+                    tauto = []
 
 print(tauto2)
 print(hacer_tablalinda(tauto2))
-if tauto.count(False)>0:
+if tautover is False:
     print("\t\nNo es una tautología")
 else:
     print("\t\nEs una tautología")
+
+msvcrt.getch()

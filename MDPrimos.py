@@ -1,5 +1,4 @@
 import msvcrt
-import math
 
 # @author Jose Reyes
 
@@ -21,3 +20,5 @@ while True:
                 break
     except:
         print("Ingrese un número ENTERO.")
+
+msvcrt.getch()
