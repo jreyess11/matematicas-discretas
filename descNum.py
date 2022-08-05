@@ -4,11 +4,12 @@ import msvcrt
 
 def desc(n):
     primos = []
-    for i in range(2, n + 1):
-        while n % i == 0:
-            primos.append(i)
-            n = n / i
+    for x in range(2, n + 1):
+        while n % x == 0:
+            primos.append(x)
+            n = n / x
     return primos
+
 
 N = int(input("Ingrese el número a descomponer: "))
 print(*desc(N), sep=" * ")
