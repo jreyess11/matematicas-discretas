@@ -3,18 +3,30 @@ import msvcrt
 import math
 
 
-def desc(n):
+
+def primo(n):
     primos = []
-    for x in range(2, r):
-        while n % x == 0:
-            primos.append(x)
-            n = n / x
+    r = int(math.sqrt(n))
+    for i in range(2, r+1):
+        if (n % i) == 0:
+            primos.append(i)
     return primos
+
+
+def desc(n):
+    lista = []
+    for j in primo(n):
+        while n % j == 0:
+            lista.append(j)
+            n = n/j
+    return lista
+
 
 while True:
     try:
         N = int(input("Ingrese un número entero positivo para descomponer: "))
-        if N>0:
+        if N > 0:
+            print(primo(N))
             print(*desc(N), sep=" * ")
             break
     except:
