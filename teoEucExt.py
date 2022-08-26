@@ -3,6 +3,7 @@ import msvcrt
 
 print("Algoritmo extendido de Euclides.\n")
 
+
 def mcd(a, b):
     a1, b1, a2, b2 = 1, 0, 0, 1
     a, b = max(a, b), min(a, b)
@@ -18,7 +19,10 @@ def mcd(a, b):
         y = a2
         a2, b2 = b2, y
 
-print(mcd(234, 531))
+        a,b=b,a%b
+    return x, y
 
+
+print(mcd(234, 531))
 
 msvcrt.getch()
