@@ -8,10 +8,10 @@ print("Convertir a cualquier base.\n")
 def alea(cant, m):
     x0 = 2
     a = 5
-    c = m-1
+    c = m - 1
     l = []
     for i in range(cant):
-        x = (a * x0 + c ) % m
+        x = (a * x0 + c) % m
         l.append(x)
         x0 = x
     return l
