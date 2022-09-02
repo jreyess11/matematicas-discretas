@@ -12,17 +12,18 @@ def mcd(a, b):
         coe = a // b
 
         a1 = a1 - coe * b1
-        x = a1
-        a1, b1 = b1, x
+        y = a1
+        a1, b1 = b1, y
 
         a2 = a2 - coe * b2
-        y = a2
-        a2, b2 = b2, y
+        x = a2
+        a2, b2 = b2, x
 
-        a,b=b,a%b
+        a, b = b, a % b
+
     return x, y
 
 
-print(mcd(234, 531))
+print(mcd(13, 480))
 
 msvcrt.getch()
