@@ -42,6 +42,10 @@ def exp(mat, power, n):
             print(EP[x][y], end="\t")
         print("]")
 
+    i = int(input("\ningrese la componente i: "))
+    j = int(input("ingrese la componente j: "))
+
+    print(f"La cantidad de caminos entre i ({i}) y j ({j}) de tamaño {power} es: {EP[i-1][j-1]}")
 
 while True:
     try:
@@ -53,7 +57,7 @@ while True:
         for i in range(N):
             V.append(string.ascii_lowercase[i])
 
-        print("Ingrese el contenido de la matriz 1")
+        print("Ingrese el contenido del grafo 1")
         for j in range(N):
             print(f"\nFila {j + 1}:")
             F = []
@@ -71,7 +75,7 @@ while True:
             #      F2.append(x)
         #   E2.append(F2)
 
-        print("\nSu matriz 1 es:")
+        print("\nSu grafo es:")
         for x in range(len(E)):
             print("[", end="\t")
             for y in range(len(E[x])):
@@ -88,11 +92,11 @@ while True:
         #  print("\nVamos a multiplicar sus matrices:")
         #   multiply(E, E2, N)
 
-        po = int(input("\nIngrese un exponente para elevar la matriz: "))
-        if po == 1:
-            print("Su matriz quedó igual")
+        k = int(input("\nIngrese la longitud k de los caminos: "))
+        if k == 0:
+            print("Su matriz ahora es I (identidad)")
         else:
-            exp(E, po, N)
+            exp(E, k, N)
         break
     except:
         print("Error")
